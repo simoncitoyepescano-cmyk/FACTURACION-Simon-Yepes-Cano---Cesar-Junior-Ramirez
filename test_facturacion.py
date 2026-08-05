@@ -200,9 +200,3 @@ class TestsFacturacion(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-
-
-
-
-
-0    unittest.main()
