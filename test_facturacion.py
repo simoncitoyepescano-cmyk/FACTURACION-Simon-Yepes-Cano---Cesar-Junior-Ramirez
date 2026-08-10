@@ -197,6 +197,42 @@ class TestsFacturacion(unittest.TestCase):
         # Verificar que el dato obtenido sea el esperado
         self.assertEqual(round(valor_calculado),valor_total_esperado)
 
+"""#CASOS DE ERROR
+
+    #SUMINISTROS DE COLOMBIA S.A.S - CALCINACIÓN ABR MAY JUN (ERROR EN # SERVICIOS)
+    def test_comprobar_valor_calcinacion_abril_mayo_junio(self):
+        #Establecer datos de entrada
+        n_servicios: int = 0
+        precio_unitario: float = 145125
+        iva: float = 82721
+
+        #Establecer datos de salida esperada
+        valor_total_esperado = 518096      
+                   
+        #Probar la funcion que resuelve problemas
+        valor_calculado = facturacion_sensores.calcular_valor_factura(n_servicios,precio_unitario,iva)
+                   
+        # Verificar que el dato obtenido sea el esperado
+        self.assertEqual(round(valor_calculado),valor_total_esperado)
+
+    #LOCERIA (PRECIO UNITARIO)
+    def test_comprobar_valor_loceria(self):
+
+        #Establecer datos de entrada
+        n_servicios: int = 1
+        precio_unitario: float = 0
+        iva: float = 661770
+
+        #Establecer datos de salida esperada
+        valor_total_esperado =  4144770
+
+        #Probar la funcion que resuelve problemas
+        valor_calculado = facturacion_sensores.calcular_valor_factura(n_servicios,precio_unitario,iva)
+
+        # Verificar que el dato obtenido sea el esperado
+        self.assertAlmostEqual(valor_calculado,valor_total_esperado)
+"""
+
 
 if __name__ == '__main__':
     unittest.main()
