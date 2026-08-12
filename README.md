@@ -1,6 +1,6 @@
 # FACTURACION-Simon-Yepes-Cano---Cesar-Junior-Ramirez
 
-Claro. Te recomiendo que el README se vea **completo y profesional**, pero sin inventar información que no hace parte del proyecto. Te lo dejo listo para **copiar y pegar directamente en GitHub**:
+---
 
 # 🧾 Sistema de Facturación por Sensores
 
