@@ -1,7 +1,5 @@
 # FACTURACION-Simon-Yepes-Cano---Cesar-Junior-Ramirez
 
----
-
 # 🧾 Sistema de Facturación por Sensores
 
 ## 📌 Descripción del proyecto
