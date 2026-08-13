@@ -2,83 +2,69 @@
 
 ## 📌 Descripción del proyecto
 
-Este proyecto consiste en el desarrollo de un sistema básico para calcular el **valor a pagar por la facturación de servicios de sensores de una empresa**.
+Este proyecto consiste en el desarrollo de una función para calcular el **valor a pagar por la facturación de servicios de sensores de una empresa**.
 
-El programa fue desarrollado tomando como referencia **facturas reales proporcionadas por la empresa**. A partir de estas facturas se obtuvieron los datos utilizados para realizar las pruebas, principalmente el **número de servicios**, el **valor unitario** y el **valor correspondiente a pagar**.
+El proyecto fue desarrollado tomando como base **facturas reales proporcionadas por la empresa**, utilizando principalmente el número de servicios y el valor unitario registrados en ellas para comprobar que los resultados obtenidos por el programa fueran correctos.
 
-El objetivo principal es comprobar mediante pruebas que el cálculo realizado por el programa coincida con los valores registrados en las facturas.
-
-Además, en este repositorio se encuentra un **audio en el que se explica el proceso de facturación por sensores de la empresa**, permitiendo conocer el contexto del proceso que se está representando mediante el programa.
+Además, en el repositorio se encuentra un **audio en el que se explica el proceso de facturación por sensores de la empresa**, permitiendo conocer el contexto del proceso que se está representando mediante el programa.
 
 ---
 
 ## 🎯 Objetivo
 
-Desarrollar y probar una función que permita calcular de manera sencilla el valor total a pagar por los servicios de sensores, teniendo en cuenta la cantidad de servicios, el valor unitario y el IVA correspondiente.
+El objetivo principal es desarrollar y probar una función que permita calcular correctamente el valor total a pagar por los servicios de sensores, teniendo en cuenta la cantidad de servicios, el valor unitario y el IVA correspondiente.
 
-También se busca utilizar pruebas unitarias para verificar que el sistema funcione correctamente tanto con datos válidos como frente a diferentes casos de error.
+También se busca comprobar el funcionamiento del programa mediante **pruebas unitarias**, incluyendo pruebas basadas en facturas reales, casos de error y casos extraordinarios.
 
 ---
 
 ## ⚙️ Funcionamiento
 
-El programa recibe dos valores principales:
+El programa recibe dos valores de entrada:
 
-1. **Número de servicios:** cantidad de servicios de sensores que serán facturados.
-2. **Valor unitario:** valor correspondiente a cada servicio.
+* 🔢 **Número de servicios:** cantidad de servicios o sensores que se deben facturar.
+* 💰 **Valor unitario:** valor correspondiente a cada servicio.
 
-Con estos datos se realiza el cálculo del valor a pagar, teniendo en cuenta un **IVA del 19%**.
+El sistema calcula automáticamente el IVA del **19%** y lo agrega al valor de los servicios.
 
-### 🧮 Fórmula utilizada
+### 🧮 Operación
 
 **Valor a pagar = (Número de servicios × Valor unitario) + ((Número de servicios × Valor unitario) × 19%)**
-
-De esta manera, primero se obtiene el valor correspondiente a los servicios y posteriormente se agrega el IVA del 19%.
 
 ---
 
 ## 📥 Valores de entrada
-
-El programa recibe los siguientes datos:
 
 | Entrada                    | Descripción                                             |
 | -------------------------- | ------------------------------------------------------- |
 | 🔢 **Número de servicios** | Cantidad de servicios de sensores que se deben facturar |
 | 💰 **Valor unitario**      | Valor correspondiente a cada servicio                   |
 
-Estos valores fueron obtenidos principalmente a partir de las **facturas utilizadas como referencia para el proyecto**.
-
 ---
 
 ## 📤 Valor de salida
 
-El programa genera como resultado:
-
-| Salida               | Descripción                                                                  |
-| -------------------- | ---------------------------------------------------------------------------- |
-| 💵 **Valor a pagar** | Valor total que debe ser pagado por los servicios, incluyendo el IVA del 19% |
+| Salida               | Descripción                                            |
+| -------------------- | ------------------------------------------------------ |
+| 💵 **Valor a pagar** | Valor total de los servicios incluyendo el IVA del 19% |
 
 ---
 
 ## 🧾 IVA
 
-Para el proceso de facturación analizado en este proyecto se utiliza un **IVA del 19%**.
+Para el proceso de facturación analizado en este proyecto se utiliza un **IVA fijo del 19%**.
 
-El IVA se aplica sobre el valor obtenido de multiplicar el número de servicios por el valor unitario.
+El IVA es calculado automáticamente por el programa a partir del valor obtenido de multiplicar el número de servicios por el valor unitario.
 
 ---
 
 ## 🧪 Pruebas unitarias
 
-Para comprobar el funcionamiento del programa se realizaron diferentes **pruebas unitarias utilizando Python y `unittest`**.
+Las pruebas fueron desarrolladas utilizando **Python y la librería `unittest`**.
 
-Las pruebas se construyeron utilizando información de **facturas reales de la empresa**, con diferentes clientes, cantidades de servicios y valores unitarios.
+Una parte importante de las pruebas se realizó utilizando información obtenida de **facturas reales de la empresa**. Estas contienen diferentes cantidades de servicios y valores unitarios, permitiendo comprobar que el programa genere los valores esperados.
 
-El objetivo de estas pruebas es verificar que el valor calculado por el programa corresponda al valor esperado de cada factura.
-
-### 📊 Pruebas realizadas
-
-Se realizaron pruebas con diferentes registros de facturación, entre ellos:
+Entre las facturas utilizadas para las pruebas se encuentran registros de diferentes clientes como:
 
 * Gamma
 * Corlanc
@@ -90,23 +76,69 @@ Se realizaron pruebas con diferentes registros de facturación, entre ellos:
 * Moldes Itagüí
 * Calcinación
 
-Estas pruebas permiten comprobar el funcionamiento de la fórmula con diferentes valores y cantidades de servicios.
+El objetivo es verificar que los resultados calculados por el programa coincidan con los valores esperados de las facturas.
 
 ---
 
 ## ❌ Casos de error
 
-Además de las pruebas con datos de las facturas, se desarrollaron **5 casos de error** con el objetivo de comprobar cómo se comporta el sistema cuando recibe datos de entrada incorrectos.
+Además de las pruebas realizadas con las facturas, se desarrollaron **4 casos de error** para comprobar el comportamiento del sistema cuando se ingresan datos inválidos.
 
-Entre los casos considerados se encuentran:
+Los casos son:
 
-* 🔴 **Número de servicios igual a `0`.**
-* 🔴 **Valor unitario igual a `0`.**
-* 🔴 **Número de servicios con un valor inválido.**
-* 🔴 **Valor unitario con un valor inválido.**
-* 🔴 **Validaciones adicionales relacionadas con los datos de entrada.**
+### 🔴 Error 1 — Número de servicios igual a 0
 
-Estos casos permiten comprobar que el programa no solamente funciona con los valores normales de las facturas, sino que también se tienen en cuenta posibles errores al ingresar los datos.
+Se comprueba que el sistema no permita realizar una facturación cuando la cantidad de servicios es igual a `0`.
+
+### 🔴 Error 2 — Valor unitario igual a 0
+
+Se comprueba que el sistema no permita utilizar un valor unitario igual a `0`.
+
+### 🔴 Error 3 — Número de servicios negativo
+
+Se comprueba que el sistema rechace una cantidad negativa de servicios, ya que no es posible facturar una cantidad negativa.
+
+### 🔴 Error 4 — Valor unitario negativo
+
+Se comprueba que el sistema rechace un valor unitario negativo, ya que un servicio no puede tener un precio negativo.
+
+Estos casos permiten comprobar que el programa no solamente realice operaciones matemáticas, sino que también tenga en cuenta la **validación de los datos de entrada**.
+
+---
+
+## 🟣 Casos de prueba extraordinarios
+
+También se realizaron **3 casos de prueba extraordinarios**. Estos casos no representan errores, sino situaciones diferentes a los valores utilizados normalmente en las facturas.
+
+### 🟣 Extraordinario 1 — Gran cantidad de servicios
+
+Se prueba el funcionamiento del programa utilizando **100 servicios** con un valor unitario de **$1.000**.
+
+El objetivo es comprobar que el sistema pueda trabajar correctamente con una cantidad de servicios mucho mayor a las utilizadas en las facturas de referencia.
+
+### 🟣 Extraordinario 2 — Valor unitario con decimales
+
+Se prueba el sistema utilizando **2 servicios** con un valor unitario de **$1.250,50**.
+
+Este caso permite comprobar que el programa pueda trabajar correctamente con valores unitarios que contienen decimales.
+
+### 🟣 Extraordinario 3 — Valor unitario muy alto
+
+Se prueba el sistema utilizando **1 servicio** con un valor unitario de **$10.000.000**.
+
+El objetivo es comprobar que la función pueda manejar correctamente valores unitarios considerablemente superiores a los utilizados en las facturas de referencia.
+
+### 📊 Resumen de pruebas especiales
+
+| Tipo              | Caso                  | Objetivo                         |
+| ----------------- | --------------------- | -------------------------------- |
+| 🔴 Error          | Servicios = `0`       | Validar cantidad de servicios    |
+| 🔴 Error          | Precio = `0`          | Validar valor unitario           |
+| 🔴 Error          | Servicios negativos   | Rechazar cantidades inválidas    |
+| 🔴 Error          | Precio negativo       | Rechazar valores inválidos       |
+| 🟣 Extraordinario | 100 servicios         | Probar una cantidad elevada      |
+| 🟣 Extraordinario | Precio decimal        | Probar valores con decimales     |
+| 🟣 Extraordinario | Precio de $10.000.000 | Probar un valor unitario elevado |
 
 ---
 
@@ -114,63 +146,59 @@ Estos casos permiten comprobar que el programa no solamente funciona con los val
 
 Dentro del repositorio se encuentra un **audio relacionado con el proyecto**.
 
-En este audio se explica el **proceso de facturación por sensores de la empresa**, proporcionando el contexto necesario para comprender de dónde provienen los datos utilizados y cómo funciona el proceso que se está representando mediante el programa.
+En este audio se explica el **proceso de facturación por sensores de la empresa**, proporcionando el contexto necesario para comprender cómo funciona el servicio y de dónde provienen los datos utilizados para realizar las pruebas.
 
-Por esta razón, se recomienda escuchar el audio como complemento de la información presentada en el código y en las pruebas.
+El audio complementa la información presentada en el código, las facturas y las pruebas unitarias.
 
 ---
 
 ## 📂 Contenido del repositorio
 
-| Elemento         | Descripción                                                                     |
-| ---------------- | ------------------------------------------------------------------------------- |
-| 🐍 **Código**    | Contiene la implementación utilizada para realizar el cálculo de la facturación |
-| 🧪 **Pruebas**   | Contiene las pruebas unitarias realizadas sobre la función                      |
-| 🧾 **Facturas**  | Documentos utilizados como referencia para obtener los datos de las pruebas     |
-| 🎧 **Audio**     | Explicación del proceso de facturación por sensores de la empresa               |
-| 📄 **README.md** | Documento con la explicación general del proyecto                               |
+| Archivo                        | Descripción                                                     |
+| ------------------------------ | --------------------------------------------------------------- |
+| 🐍 **facturacion_sensores.py** | Contiene la función encargada de calcular el valor a pagar      |
+| 🧪 **test_facturacion.py**     | Contiene las pruebas unitarias del sistema                      |
+| 🧾 **Facturas**                | Información utilizada como referencia para realizar las pruebas |
+| 🎧 **Audio**                   | Explicación del proceso de facturación por sensores             |
+| 📄 **README.md**               | Documentación y explicación general del proyecto                |
 
 ---
 
 ## 🚀 Futuras implementaciones
 
-Actualmente, el proyecto utiliza como referencia los datos encontrados en las **facturas reales proporcionadas por la empresa**. Por esta razón, los datos utilizados para las pruebas se encuentran relacionados con las situaciones y periodos registrados en dichas facturas.
+Como futura mejora del proyecto, se busca implementar los **meses del servicio como una variable de entrada**.
 
-Como una futura mejora, se busca implementar los **meses del servicio como una variable de entrada adicional**.
+Actualmente, los datos utilizados fueron establecidos principalmente con base en las **facturas reales proporcionadas por la empresa**. Por esta razón, el número de meses no se maneja actualmente como una entrada independiente y el sistema está limitado a las situaciones representadas en las facturas utilizadas.
 
-Actualmente, los meses no hacen parte de las entradas de la función, por lo que el sistema tiene una capacidad limitada para adaptarse a diferentes periodos de facturación.
+Al implementar los meses como una variable de entrada, el programa podría adaptarse de una manera más flexible a diferentes periodos de facturación.
 
-### 🔮 ¿Qué permitiría esta mejora?
+### 🔮 Posibles mejoras
 
-Al incluir los meses como una variable de entrada, el sistema podría:
-
-* 📅 Trabajar con diferentes periodos de facturación.
-* 🔄 Adaptarse a una cantidad variable de meses.
+* 📅 Permitir ingresar la cantidad de meses del servicio.
+* 🔄 Adaptar el cálculo a diferentes periodos de facturación.
 * 🧮 Realizar cálculos más dinámicos.
-* 📈 Permitir una mayor variedad de casos de prueba.
+* 📈 Aumentar la variedad de casos de prueba.
 * ⚙️ Representar de una manera más completa el proceso real de facturación de la empresa.
-
-Esta implementación permitiría que el sistema no dependa únicamente de los valores establecidos a partir de las facturas utilizadas para este proyecto.
 
 ---
 
-## 🛠️ Tecnologías utilizadas
+## 💻 Tecnologías utilizadas
 
-| Tecnología      | Uso                                           |
-| --------------- | --------------------------------------------- |
-| 🐍 **Python**   | Desarrollo del programa                       |
-| 🧪 **unittest** | Creación y ejecución de las pruebas unitarias |
-| 🐙 **GitHub**   | Repositorio y almacenamiento del proyecto     |
+| Tecnología      | Uso                                       |
+| --------------- | ----------------------------------------- |
+| 🐍 **Python**   | Desarrollo del programa                   |
+| 🧪 **unittest** | Creación y ejecución de pruebas unitarias |
+| 🐙 **GitHub**   | Almacenamiento y gestión del proyecto     |
 
 ---
 
 ## 📚 Metodología
 
-El desarrollo del proyecto se realizó siguiendo un proceso basado en:
+El proyecto se desarrolló siguiendo el siguiente proceso:
 
-**Facturas de la empresa → Identificación de datos → Implementación del cálculo → Pruebas unitarias → Casos de error → Análisis de resultados**
+**Facturas reales → Identificación de datos → Desarrollo de la función → Pruebas con facturas → Casos de error → Casos extraordinarios → Análisis de resultados**
 
-De esta manera, el programa no se construyó únicamente a partir de datos ficticios, sino que se utilizaron **datos reales de facturación como referencia para las pruebas**.
+De esta manera, el proyecto combina información real de la empresa con pruebas diseñadas para comprobar diferentes comportamientos del sistema.
 
 ---
 
@@ -183,8 +211,10 @@ De esta manera, el programa no se construyó únicamente a partir de datos ficti
 
 ## 📌 Conclusión
 
-El proyecto permite representar de manera sencilla el cálculo de la **facturación de servicios de sensores de una empresa**, utilizando como base información obtenida de facturas reales.
+El proyecto permite representar de manera sencilla el proceso de **facturación de servicios de sensores de una empresa**, utilizando como referencia información obtenida de facturas reales.
 
-Mediante las pruebas unitarias se verifica que los resultados obtenidos por el programa sean consistentes con los valores esperados y, mediante los casos de error, se consideran diferentes situaciones en las que los datos de entrada pueden ser incorrectos.
+Las pruebas unitarias permiten comprobar que los cálculos realizados por el programa sean correctos, mientras que los **4 casos de error** permiten validar el comportamiento del sistema frente a datos inválidos.
 
-Como siguiente paso, se plantea ampliar el sistema mediante la incorporación de los **meses del servicio como variable de entrada**, permitiendo que el programa sea más flexible y pueda adaptarse a diferentes periodos y situaciones de facturación.
+Por otra parte, los **3 casos extraordinarios** permiten comprobar que el programa también pueda trabajar correctamente con situaciones diferentes a las encontradas normalmente en las facturas.
+
+Como futura mejora, se plantea incorporar los **meses del servicio como una variable de entrada**, haciendo que el sistema sea más flexible y pueda adaptarse a diferentes periodos de facturación.
