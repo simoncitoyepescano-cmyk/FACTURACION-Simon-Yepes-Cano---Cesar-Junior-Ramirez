@@ -1,0 +1,52 @@
+from datetime import date
+import src.model.facturacion_sensores as facturacion_sensores
+
+class Cliente:
+    def __init__(self,cliente: str, n_servicios: int, precio_sensor: float):
+        self.cliente = cliente
+        self.n_servicios = n_servicios
+        self.precio_sensor = precio_sensor
+
+    def detalles_compra(self):
+        return f"Cliente: {self.cliente} \nSensores activos: {self.n_servicios} \nPrecio de cada sensor: {self.precio_sensor} \n---------------------------- \nValor a pagar: {facturacion_sensores.calcular_valor_factura(n_servicios,precio_sensor)}"
+
+print("\n")
+
+nombre_cliente = input("Ingrese el nombre del cliente: ")
+n_servicios = int(input("Ingrese el número de sensores activos que posee el cliente: "))
+precio_sensor = float(input("Ingrese el valor de cada sensor: "))
+
+print("\n")
+print("-----------------------")
+print("MENU")
+print("-----------------------")
+print("1. Calcular valor factura")
+print("2. Generar factura")
+print("3. Salir")
+print("-----------------------")
+print("\n")
+opcion = int(input("Ingrese la opción a realizar: "))
+print("--------------------------------------------")
+
+while opcion != 0:
+    if opcion == 1:
+        informacion = Cliente(nombre_cliente,n_servicios,precio_sensor)
+        print(f"El valor a pagar por {informacion.cliente} es de {facturacion_sensores.calcular_valor_factura(n_servicios,precio_sensor)}$")
+        print("--------------------------------------------")
+        print("\n")
+
+    elif opcion == 2:
+        hoy=date.today()
+        print(f"Factura realizada el {hoy}")
+        informacion= Cliente(nombre_cliente,n_servicios,precio_sensor)
+        print(informacion.detalles_compra())
+        print("--------------------------------------------")
+        print("\n")
+
+    elif opcion == 3:
+        print("Hasta luego")
+        print("\n")
+        break
+        
+    opcion = int(input("Ingrese otra opción a realizar: "))
+    print("---------------------------------------------")
