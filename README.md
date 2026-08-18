@@ -204,7 +204,7 @@ De esta manera, el proyecto combina información real de la empresa con pruebas 
 
 ## 👥 Autores
 
-**Simon Yepes Cano**
+**Simon Yepes Cano** - 
 **Cesar Junior Ramirez**
 
 ---
