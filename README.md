@@ -1,4 +1,4 @@
-# 🧾 Sistema de Facturación por Sensores
+# 🧾 Sistema de Facturación de Sensores
 
 ## 📌 Descripción del proyecto
 
